@@ -4,7 +4,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallback: en }
+    translator:      ~
     secret:          %secret%
     charset:         UTF-8
     router:          { resource: "%kernel.root_dir%/config/routing.yml" }
@@ -57,3 +57,10 @@ swiftmailer:
 jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
+
+#  FOS USER
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb'
+    firewall_name: main
+    user_class: Acme\ParqueBundle\Entity\User
