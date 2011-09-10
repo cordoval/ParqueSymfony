@@ -1,0 +1,63 @@
+<?php
+
+namespace Acme\ParqueBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Acme\ParqueBundle\Entity\Especies
+ *
+ * @ORM\Table(name="Especies")
+ * @ORM\Entity
+ */
+class Especies
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="ID", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var text $nombrecomun
+     *
+     * @ORM\Column(name="NombreComun", type="text", nullable=false)
+     */
+    private $nombrecomun;
+
+    /**
+     * @var text $nombrecientifico
+     *
+     * @ORM\Column(name="NombreCientifico", type="text", nullable=false)
+     */
+    private $nombrecientifico;
+
+    /**
+     * @var text $descripcion
+     *
+     * @ORM\Column(name="Descripcion", type="text", nullable=false)
+     */
+    private $descripcion;
+
+    /**
+     * @var string $foto
+     *
+     * @ORM\Column(name="Foto", type="string", length=255, nullable=true)
+     */
+    private $foto;
+
+    /**
+     * @var Estadosconservacion
+     *
+     * @ORM\ManyToOne(targetEntity="Estadosconservacion")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="EstadoConservacion", referencedColumnName="ID")
+     * })
+     */
+    private $estadoconservacion;
+
+
+}

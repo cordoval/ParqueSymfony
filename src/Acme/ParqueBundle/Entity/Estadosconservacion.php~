@@ -1,0 +1,46 @@
+<?php
+
+namespace Acme\ParqueBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Acme\ParqueBundle\Entity\Estadosconservacion
+ *
+ * @ORM\Table(name="EstadosConservacion")
+ * @ORM\Entity
+ */
+class Estadosconservacion
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="ID", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var text $sigla
+     *
+     * @ORM\Column(name="Sigla", type="text", nullable=false)
+     */
+    private $sigla;
+
+    /**
+     * @var text $nombre
+     *
+     * @ORM\Column(name="Nombre", type="text", nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var text $descripcion
+     *
+     * @ORM\Column(name="Descripcion", type="text", nullable=false)
+     */
+    private $descripcion;
+
+
+}

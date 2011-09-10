@@ -1,0 +1,16 @@
+_homepage:
+    pattern:  /parque/
+    defaults: { _controller: AcmeParqueBundle:Individuos:index }
+    
+
+individuos_create:
+    pattern:   /parque/new/
+    defaults:  { _controller: AcmeParqueBundle:Individuos:create }
+
+individuos_update:
+    pattern:   /parque/edit/{id}/
+    defaults:  { _controller: AcmeParqueBundle:Individuos:update }
+
+individuos_show:
+    pattern:   /parque/show/{id}/
+    defaults:  { _controller: AcmeParqueBundle:Individuos:show }

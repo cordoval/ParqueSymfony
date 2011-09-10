@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Sectores" table="Sectores">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="integer" column="ID">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="sigla" type="text" column="Sigla"/>
+    <field name="nombre" type="text" column="Nombre"/>
+    <field name="comentario" type="text" column="Comentario"/>
+    <field name="xplus" type="integer" column="xplus"/>
+    <field name="xminus" type="integer" column="xminus"/>
+    <field name="yplus" type="integer" column="yplus"/>
+    <field name="yminus" type="integer" column="yminus"/>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

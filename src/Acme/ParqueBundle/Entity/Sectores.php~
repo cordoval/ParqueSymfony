@@ -1,0 +1,74 @@
+<?php
+
+namespace Acme\ParqueBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Acme\ParqueBundle\Entity\Sectores
+ *
+ * @ORM\Table(name="Sectores")
+ * @ORM\Entity
+ */
+class Sectores
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="ID", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var text $sigla
+     *
+     * @ORM\Column(name="Sigla", type="text", nullable=false)
+     */
+    private $sigla;
+
+    /**
+     * @var text $nombre
+     *
+     * @ORM\Column(name="Nombre", type="text", nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var text $comentario
+     *
+     * @ORM\Column(name="Comentario", type="text", nullable=false)
+     */
+    private $comentario;
+
+    /**
+     * @var integer $xplus
+     *
+     * @ORM\Column(name="xplus", type="integer", nullable=false)
+     */
+    private $xplus;
+
+    /**
+     * @var integer $xminus
+     *
+     * @ORM\Column(name="xminus", type="integer", nullable=false)
+     */
+    private $xminus;
+
+    /**
+     * @var integer $yplus
+     *
+     * @ORM\Column(name="yplus", type="integer", nullable=false)
+     */
+    private $yplus;
+
+    /**
+     * @var integer $yminus
+     *
+     * @ORM\Column(name="yminus", type="integer", nullable=false)
+     */
+    private $yminus;
+
+
+}

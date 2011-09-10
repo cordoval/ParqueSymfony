@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Individuos" table="Individuos">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="plantacion" type="date" column="plantacion"/>
+    <field name="coordx" type="float" column="coordx"/>
+    <field name="coordy" type="float" column="coordy"/>
+    <field name="foto" type="string" column="foto" length="255"/>
+    <many-to-one field="especie" target-entity="Especies" orphan-removal="">
+      <join-columns>
+        <join-column name="especie" referenced-column-name="ID"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

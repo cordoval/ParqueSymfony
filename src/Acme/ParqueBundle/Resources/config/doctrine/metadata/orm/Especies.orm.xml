@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Especies" table="Especies">
+    <change-tracking-policy>DEFERRED_IMPLICIT</change-tracking-policy>
+    <id name="id" type="integer" column="ID">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombrecomun" type="text" column="NombreComun"/>
+    <field name="nombrecientifico" type="text" column="NombreCientifico"/>
+    <field name="descripcion" type="text" column="Descripcion"/>
+    <field name="foto" type="string" column="Foto" length="255"/>
+    <many-to-one field="estadoconservacion" target-entity="Estadosconservacion" orphan-removal="">
+      <join-columns>
+        <join-column name="EstadoConservacion" referenced-column-name="ID"/>
+      </join-columns>
+    </many-to-one>
+    <lifecycle-callbacks/>
+  </entity>
+</doctrine-mapping>

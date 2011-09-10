@@ -1,0 +1,17 @@
+ # Create Database
+ php app/console doctrine:database:create
+ 
+ # Import Existing Database from parameters.ini
+ php app/console doctrine:mapping:convert xml ./src/Acme/BlogBundle/Resources/config/doctrine/metadata/orm --from-database --force
+ php app/console doctrine:mapping:import AcmeParqueBundle annotation
+ php app/console doctrine:generate:entities AcmeParqueBundle
+
+
+ # Create Forms
+ 
+ # Install Bundles
+ php bin/vendors install
+ 
+ # Install Assets
+ php app/console assets:install
+ php app/console assets:install web

@@ -1,0 +1,17 @@
+{% extends 'AcmeParqueBundle::layout.html.twig' %}
+
+{% block title %}Crear de Individuos{% endblock %}
+
+{% block content_header '' %}
+
+{% block content %}
+ 	<h1>Agregar Individuo</h1>
+ 	<form action="{{ path('individuos_create') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    
+    <p>
+        <input type="submit" />
+    </p>
+</form>
+	
+{% endblock %}

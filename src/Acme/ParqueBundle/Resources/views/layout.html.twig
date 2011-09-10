@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="{{ asset('bundles/acmeparque/css/style.css') }}" type="text/css" media="all" />
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="{{ asset('bundles/acmeparque/js/jquery-1.4.2.min.js') }} "></script>
+		<script type="text/javascript" src="{{ asset('bundles/acmeparque/js/jquery.imghover-1.1rc.js') }} "></script>
+		
+		<script>
+			$(window).load(function(){
+  				$('#wrapper').fadeIn(1300);
+  				$('div.logos').imghover({suffix: '-hovered' , fade: 'true' , fadeSpeed: 500}); 				
+			});
+		</script>
+		
+        <title>{% block title %}Demo Bundle{% endblock %}</title>
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    
+    <body>
+        <div id="wrapper">
+        {# header #}
+            <div id="wheader">
+                <a href="{{ path('_homepage') }}">
+                    <img src="{{ asset('bundles/acmeparque/images/13.svg') }}"  /><h1>Parque UTFSM</h1>
+                </a>
+                {#  SEARCH FORM
+                <form id="symfony-search" method="GET" action="http://symfony.com/search">
+                    <label for="symfony-search-field"><span>Search on Symfony Website</span></label>
+                    <input name="q" id="symfony-search-field" type="search" placeholder="Search on Symfony website" class="medium_txt">
+                    <input type="submit" class="symfony-button-grey" value="OK" />
+                </form> #}
+            </div>
+
+            <div id="wcontent">
+                {% block content %}
+                {% endblock %}
+            </div>
+
+            <div id="wfooter">
+            	<div class="logos">
+					<a href="http://www.utfsm.cl/" alt="Lider en Ciencia y Tecnología" title="Lider en Ciencia y Tecnología" ><img src="{{ asset('bundles/acmeparque/images/utfsm-logo.png') }}" /></a>
+				</div> 
+            </div>
+        </div>
+    </body>
+</html>
