@@ -8,6 +8,8 @@
 
 
  # Create Forms
+ php app/console generate:doctrine:crud
+ 
  
  # Install Bundles
  php bin/vendors install
